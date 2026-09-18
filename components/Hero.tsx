@@ -29,7 +29,7 @@ export default function Hero() {
       <div className="container relative z-10 pt-36">
 
         {/* Headline */}
-        <h1 className="font-serif text-white text-5xl sm:text-6xl leading-[1.05] tracking-tight max-w-3xl">
+        <h1 className="font-serif text-white text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.05] tracking-tight max-w-3xl">
           {heroData.headline.map((line, i) => (
             <span key={i} className="block">{line}</span>
           ))}
