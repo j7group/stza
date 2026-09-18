@@ -15,7 +15,7 @@ export default function STZOpportunity() {
             {stzaData.headline}
           </h2>
           {stzaData.body.map((para, i) => (
-            <p key={i} className="text-muted text-base sm:text-lg leading-relaxed mb-3">
+            <p key={i} className=" text-sm sm:text-base leading-relaxed mb-3">
               {para}
             </p>
           ))}
@@ -47,7 +47,7 @@ export default function STZOpportunity() {
                   key={label}
                   className="grid grid-cols-[130px_1fr] gap-3 py-2.5 border-b border-border last:border-b-0 items-center"
                 >
-                  <span className="text-xs text-muted font-medium uppercase tracking-wider">
+                  <span className="text-xs font-medium uppercase tracking-wider">
                     {label}
                   </span>
                   <span className="text-sm sm:text-base text-primary font-medium">{value}</span>
@@ -69,13 +69,13 @@ export default function STZOpportunity() {
 
             {/* STZA Info */}
             <Card size="sm">
-              <div className="text-xs text-muted font-semibold uppercase tracking-wider mb-2">
+              <div className="text-xs text-font-semibold uppercase tracking-wider mb-2">
                 Regulatory Authority
               </div>
               <div className="text-base sm:text-lg font-bold text-primary mb-2">
                 Special Technology Zones Authority
               </div>
-              <p className="text-xs sm:text-sm text-muted leading-relaxed">
+              <p className="text-xs sm:text-sm leading-relaxed">
                 Established under the STZA Act 2021, Government of Pakistan. Tech7 operates under full regulatory oversight and compliance.
               </p>
               <a

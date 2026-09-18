@@ -24,7 +24,7 @@ export default function SpacesGallery() {
               Every Detail.<br />Designed for Work.
             </h2>
           </div>
-          <p className="text-muted text-base max-w-sm md:text-right leading-relaxed">
+          <p className=" text-base max-w-sm md:text-right leading-relaxed">
             Premium office environments, collaborative spaces, and world-class amenities across 1.1 million square feet.
           </p>
         </div>

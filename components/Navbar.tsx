@@ -10,7 +10,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Sync with Lenis scroll position
   useLenis((lenis) => {
     setScrolled(lenis.scroll > 80);
   });
@@ -19,20 +18,18 @@ export default function Navbar() {
     <>
       <header
         id="navbar"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-[#081e0e]/95 backdrop-blur-md border-b border-white/10"
-            : "bg-transparent border-b border-transparent"
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 sm:px-6"
       >
         <div
-          className={`container flex items-center justify-between transition-all duration-300 ${
-            scrolled ? "h-16" : "h-20"
+          className={`container mx-auto flex items-center justify-between rounded-full border transition-all duration-300 px-6 ${
+            scrolled
+              ? "h-20 bg-[#081e0e]/95 backdrop-blur-md border-white/15 shadow-lg shadow-black/20"
+              : "h-16 bg-[#081e0e]/40 backdrop-blur-sm border-white/10"
           }`}
         >
-          {/* Logo */}
+          {/* Logo — left */}
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="relative w-[72px] h-[28px]">
+            <div className="relative w-[72px] h-[40px]">
               <Image
                 src="/images/imgi_18_TECH7.webp"
                 alt="Tech7"
@@ -43,7 +40,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav — centered */}
           <nav
             aria-label="Main navigation"
             className="hidden md:flex items-center gap-8 lg:gap-10"
@@ -52,20 +49,21 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-white/70 hover:text-white text-sm font-normal tracking-wide transition-colors duration-200"
+                className="text-white hover:text-white text-sm font-normal tracking-wide transition-colors duration-200"
               >
                 {link.label}
               </Link>
             ))}
-
-            <Link
-              href="#contact"
-              id="navbar-cta"
-              className="bg-accent text-primary px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide hover:bg-[#c8e888] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(215,240,156,0.3)] transition-all duration-200 whitespace-nowrap"
-            >
-              Enquire Now
-            </Link>
           </nav>
+
+          {/* CTA — right */}
+          <Link
+            href="#contact"
+            id="navbar-cta"
+            className="hidden md:inline-flex items-center bg-accent text-primary px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide hover:bg-[#c8e888] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(215,240,156,0.3)] transition-all duration-200 whitespace-nowrap"
+          >
+            Enquire Now
+          </Link>
 
           {/* Mobile Hamburger */}
           <button

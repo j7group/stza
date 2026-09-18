@@ -31,31 +31,31 @@ export default function CallToAction() {
               <span className="block text-primary">{ctaData.headline[1]}</span>
             </h2>
 
-            <p className="text-muted text-sm sm:text-base leading-relaxed mb-8 max-w-lg">
+            <p className=" text-sm sm:text-base leading-relaxed mb-8 max-w-lg">
               {ctaData.sub}
             </p>
 
             {/* Direct Contact Info Card */}
             <Card size="sm" className="mb-6">
-              <h4 className="text-[11px] uppercase tracking-wider text-muted font-semibold mb-4">
+              <h4 className="text-[11px] uppercase tracking-wider font-semibold mb-4">
                 Zone Secretariat &amp; Inquiries
               </h4>
               <div className="flex flex-col gap-4">
                 <div>
-                  <span className="block text-[11px] text-muted mb-0.5 font-medium">Address</span>
+                  <span className="block text-[11px] mb-0.5 font-medium">Address</span>
                   <p className="text-xs sm:text-sm text-primary font-medium leading-snug">
                     {footerData.contact.address}
                   </p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3.5 border-t border-border">
                   <div>
-                    <span className="block text-[11px] text-muted mb-0.5 font-medium">Email</span>
+                    <span className="block text-[11px] mb-0.5 font-medium">Email</span>
                     <a href={`mailto:${footerData.contact.email}`} className="text-xs sm:text-sm text-primary font-semibold hover:underline">
                       {footerData.contact.email}
                     </a>
                   </div>
                   <div>
-                    <span className="block text-[11px] text-muted mb-0.5 font-medium">Official License</span>
+                    <span className="block text-[11px] mb-0.5 font-medium">Official License</span>
                     <span className="text-xs sm:text-sm font-mono text-primary font-semibold">
                       {footerData.legal.license}
                     </span>
@@ -86,7 +86,7 @@ export default function CallToAction() {
                   ✓
                 </div>
                 <h3 className="font-serif text-xl sm:text-2xl text-primary mb-1.5 font-normal">Inquiry Received</h3>
-                <p className="text-muted text-xs sm:text-sm leading-relaxed mb-5">
+                <p className=" text-xs sm:text-sm leading-relaxed mb-5">
                   Thank you for your interest in Tech7. Our Zone Enterprise Licensing Director will contact you within 24 business hours.
                 </p>
                 <button
@@ -103,7 +103,7 @@ export default function CallToAction() {
                   <h3 className="font-serif text-xl sm:text-2xl font-normal text-primary mb-0.5">
                     Request Zone Space &amp; Consultation
                   </h3>
-                  <p className="text-xs text-muted">
+                  <p className="text-xs">
                     Begin your STZA qualification and floor allocation process.
                   </p>
                 </div>

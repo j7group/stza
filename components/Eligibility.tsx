@@ -13,7 +13,7 @@ export default function Eligibility() {
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-primary font-normal leading-tight mt-3.5 mb-3">
             How to Qualify as a Zone Enterprise
           </h2>
-          <p className="text-muted text-sm sm:text-base leading-relaxed">
+          <p className=" text-sm sm:text-base leading-relaxed">
             Any technology, ITeS, or advanced engineering company meeting the criteria outlined in the STZA Act 2021 can access the 10-year tax holiday and regulatory protections.
           </p>
         </div>
@@ -35,10 +35,10 @@ export default function Eligibility() {
                 <h3 className="font-serif text-lg sm:text-xl font-normal text-primary tracking-tight mb-2">
                   {step.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-muted leading-relaxed">{step.body}</p>
+                <p className="text-xs sm:text-sm leading-relaxed">{step.body}</p>
               </div>
 
-              <div className="mt-6 pt-3.5 border-t border-dashed border-border text-[11px] text-muted uppercase tracking-wider">
+              <div className="mt-6 pt-3.5 border-t border-dashed border-border text-[11px] uppercase tracking-wider">
                 STZA Act 2021 § Verification
               </div>
             </Card>

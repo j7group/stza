@@ -31,7 +31,7 @@ export default function Tenants() {
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-primary font-normal leading-tight">
               Ecosystem &amp; Key Tenants
             </h2>
-            <p className="text-muted text-base mt-2 max-w-xl leading-relaxed">
+            <p className=" text-base mt-2 max-w-xl leading-relaxed">
               Join an elite collective of international technology leaders, fintech giants, and research consortia establishing operations inside Tech7.
             </p>
           </div>
@@ -55,25 +55,25 @@ export default function Tenants() {
                       <span className={`w-1.5 h-1.5 rounded-full ${status.dotClass}`} />
                       {status.label}
                     </span>
-                    <span className="font-mono text-xs text-muted">ID 0{idx + 1}</span>
+                    <span className="font-mono text-xs">ID 0{idx + 1}</span>
                   </div>
 
                   <h3 className="font-serif text-2xl sm:text-3xl font-normal text-primary tracking-tight mb-2">
                     {tenant.name}
                   </h3>
-                  <p className="text-sm text-muted leading-relaxed">{tenant.floor}</p>
+                  <p className="text-sm leading-relaxed">{tenant.floor}</p>
                 </div>
 
                 {/* Bottom metric */}
                 <div className="mt-8 pt-6 border-t border-border flex items-baseline justify-between">
                   <div>
-                    <span className="block text-[11px] uppercase tracking-wider text-muted mb-1 font-medium">
+                    <span className="block text-[11px] uppercase tracking-wider mb-1 font-medium">
                       Allocated Footprint
                     </span>
                     <span className="font-serif text-3xl sm:text-4xl font-normal text-primary leading-none">
                       {tenant.areaSqft}
                     </span>
-                    <span className="text-sm text-muted ml-1">sq. ft.</span>
+                    <span className="text-sm ml-1">sq. ft.</span>
                   </div>
 
                   <div className="w-10 h-10 rounded-full bg-surface flex items-center justify-center border border-border">

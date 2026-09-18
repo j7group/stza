@@ -38,7 +38,7 @@ export default function FDIBenefits() {
                 {benefit.title}
               </h3>
 
-              <p className="text-sm text-muted leading-relaxed mt-auto">{benefit.body}</p>
+              <p className="text-sm leading-relaxed mt-auto">{benefit.body}</p>
             </Card>
           ))}
         </div>
@@ -54,7 +54,7 @@ export default function FDIBenefits() {
               <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <p className="text-sm text-muted leading-relaxed">
+          <p className="text-sm leading-relaxed">
             <strong className="text-primary font-semibold">10-Year Guarantee:</strong>{" "}
             All benefits listed above are legally binding and run for a full ten years from the date your STZ license is issued under the STZA Act 2021.
           </p>

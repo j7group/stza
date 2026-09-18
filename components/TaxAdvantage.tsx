@@ -29,7 +29,7 @@ function TaxTable({
             } ${i % 2 === 0 ? "bg-white" : "bg-surface"}`}
         >
           <span className="text-sm sm:text-base text-primary font-normal">{row.label}</span>
-          <span className="text-sm sm:text-base text-muted line-through text-right min-w-[90px]">{row.withoutSTZ}</span>
+          <span className="text-sm sm:text-base  line-through text-right min-w-[90px]">{row.withoutSTZ}</span>
           <span className="text-base sm:text-lg font-bold text-primary min-w-[80px] text-center">{row.withSTZ}</span>
         </div>
       ))}
@@ -55,10 +55,10 @@ export default function TaxAdvantage() {
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-primary font-normal leading-tight mb-5">
               No Taxes.<br />Zero.
             </h2>
-            <p className="text-muted text-base sm:text-lg leading-relaxed mb-4">
+            <p className="text-sm sm:text-base leading-relaxed mb-4">
               With an STZ license from Tech7, your business pays 0% on income tax, corporate tax, import duties, and sales tax — for a full 10 years.
             </p>
-            <p className="text-muted text-sm sm:text-base leading-relaxed">
+            <p className="text-sm sm:text-base leading-relaxed">
               This isn&apos;t a reduction. It&apos;s a full exemption — one of the most competitive tax frameworks in the region for technology businesses.
             </p>
           </div>

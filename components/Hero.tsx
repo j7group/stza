@@ -23,20 +23,13 @@ export default function Hero() {
       <div className="absolute inset-0 bg-primary/25" />
 
       {/* Bottom gradient for text legibility */}
-      <div className="absolute bottom-0 left-0 right-0 h-[70%] bg-gradient-to-t from-primary via-primary/80 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-t from-primary via-primary/80 to-transparent" />
 
       {/* Content */}
-      <div className="container relative z-10 pt-36 pb-20 sm:pb-24 lg:pb-28">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-accent/40 rounded-full mb-8 bg-primary/40 backdrop-blur-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-          <span className="text-accent text-[11px] font-semibold tracking-widest uppercase">
-            {heroData.badge}
-          </span>
-        </div>
+      <div className="container relative z-10 pt-36">
 
         {/* Headline */}
-        <h1 className="font-serif text-white text-5xl sm:text-6xl md:text-7xl lg:text-[80px] leading-[1.05] tracking-tight mb-6 max-w-3xl">
+        <h1 className="font-serif text-white text-5xl sm:text-6xl leading-[1.05] tracking-tight max-w-3xl">
           {heroData.headline.map((line, i) => (
             <span key={i} className="block">{line}</span>
           ))}

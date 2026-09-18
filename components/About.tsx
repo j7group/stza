@@ -16,7 +16,7 @@ export default function About() {
 
           <div className="flex flex-col gap-5">
             {aboutData.paragraphs.map((para, i) => (
-              <p key={i} className="text-muted text-base sm:text-lg leading-relaxed">
+              <p key={i} className="text-sm sm:text-base leading-relaxed">
                 {para}
               </p>
             ))}
@@ -30,7 +30,7 @@ export default function About() {
               </svg>
             </div>
             <div>
-              <div className="text-xs text-muted tracking-wider uppercase font-semibold">
+              <div className="text-xs tracking-wider uppercase font-semibold">
                 STZA Licensed Zone Developer
               </div>
               <div className="text-base font-semibold text-primary mt-0.5">
