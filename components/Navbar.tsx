@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useLenis } from "lenis/react";
 import { navLinks } from "@/lib/tech7";
+import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,21 +21,27 @@ export default function Navbar() {
         className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 sm:px-6"
       >
         <div
-          className={`container mx-auto flex items-center justify-between rounded-full border transition-all duration-300 px-6 ${
+          className={`container mx-auto flex items-center justify-between rounded-full border transition-all duration-300 px-6 overflow-visible ${
             scrolled
-              ? "h-20 bg-[#081e0e]/95 backdrop-blur-md border-white/15 shadow-lg shadow-black/20"
+              ? "h-18 bg-[#081e0e]/95 backdrop-blur-md border-white/15 shadow-lg shadow-black/20"
               : "h-16 bg-[#081e0e]/40 backdrop-blur-sm border-white/10"
           }`}
         >
           {/* Logo — left */}
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="relative w-[72px] h-[40px]">
+          <Link href="/" className="flex items-center shrink-0">
+            <div
+              className={`relative w-auto transition-all duration-300 ${
+                scrolled ? "h-8" : "h-9"
+              }`}
+              style={{ aspectRatio: "auto", width: scrolled ? 140 : 170 }}
+            >
               <Image
-                src="/images/imgi_18_TECH7.webp"
+                src="/logo/TECH7_Website_Logo.svg"
                 alt="Tech7"
                 fill
                 className="object-contain object-left"
                 priority
+                sizes="200px"
               />
             </div>
           </Link>
@@ -49,7 +55,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-white hover:text-white text-sm font-normal tracking-wide transition-colors duration-200"
+                className="text-white/80 hover:text-white text-sm font-normal tracking-wide transition-colors duration-200"
               >
                 {link.label}
               </Link>
