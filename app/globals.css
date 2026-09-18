@@ -71,35 +71,37 @@
 }
 
 /* ─── Reset & Base ──────────────────────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/*
+  Tailwind v4 puts utilities in @layer utilities. An unlayered universal
+  reset of margin and padding (the same rules Preflight already applies in
+  @layer base) would win the cascade and zero out every spacing utility,
+  including card padding. Keep extras in @layer base so utilities win.
+*/
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  body {
+    background: var(--white);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
 
-body {
-  background: var(--white);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
+  img, video {
+    max-width: 100%;
+    display: block;
+  }
 
-img, video {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 /* ─── Typography ────────────────────────────────────────────────────────── */
@@ -252,19 +254,8 @@ a {
 }
 
 /* ─── Cards ─────────────────────────────────────────────────────────────── */
-.card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 32px;
-  transition: all var(--transition-base);
-}
-
-.card:hover {
-  border-color: var(--accent);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(12, 46, 22, 0.08);
-}
+/* Card layout now lives entirely in components/ui/Card.tsx as Tailwind
+   utility classes (size/tone/hover variants) — no custom CSS needed here. */
 
 /* ─── Animations & Keyframes ─────────────────────────────────────────────── */
 @keyframes fadeUp {

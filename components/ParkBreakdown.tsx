@@ -1,4 +1,5 @@
 import SectionLabel from "@/components/ui/SectionLabel";
+import Card from "@/components/ui/Card";
 import { parkStats } from "@/lib/tech7";
 
 export default function ParkBreakdown() {
@@ -18,7 +19,7 @@ export default function ParkBreakdown() {
           {parkStats.map((stat, i) => (
             <div
               key={i}
-              className={`p-7 sm:p-8 lg:p-9 transition-colors duration-200 border-b border-white/10 ${
+              className={`p-6 sm:p-7 lg:p-8 transition-colors duration-200 border-b border-white/10 ${
                 (i + 1) % 2 === 0 ? "lg:border-r" : "border-r"
               } ${(i + 1) % 4 === 0 ? "lg:border-r-0" : ""} ${
                 i >= 4 ? "border-b-0" : ""
@@ -45,50 +46,59 @@ export default function ParkBreakdown() {
           ))}
         </div>
 
-        {/* Buildings status */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          {[
-            {
-              name: "Emporium Park 1 (EMP1)",
-              status: "Operational",
-              area: "364,129 sqft",
-              floors: "7 Floors",
-              highlight: true,
-            },
-            {
-              name: "Emporium Park 2 (EMP2)",
-              status: "Completion June 2027",
-              area: "293,473 sqft",
-              floors: "7 Floors",
-              highlight: false,
-            },
-          ].map((building) => (
-            <div
-              key={building.name}
-              className={`rounded-2xl p-6 sm:p-7 flex items-center justify-between gap-4 ${
-                building.highlight
-                  ? "bg-primary border border-accent/30 shadow-xs"
-                  : "bg-white/[0.04] border border-white/10"
-              }`}
-            >
-              <div>
-                <div className="text-xs text-white/50 mb-1 font-medium tracking-wider uppercase">
-                  {building.floors}
-                </div>
-                <div className="text-base sm:text-lg font-semibold text-white">{building.name}</div>
-                <div className="text-sm text-white/60 mt-0.5">{building.area}</div>
-              </div>
-              <span
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase whitespace-nowrap border ${
-                  building.highlight
-                    ? "text-accent border-accent/60 bg-accent/10"
-                    : "text-white/50 border-white/30"
+        {/* Buildings status — pulled clearly away from the stats block above,
+            with its own top divider so the boundary reads even against the
+            same dark background. */}
+        <div className="mt-14 sm:mt-16 pt-10 sm:pt-12 border-t border-white/10">
+          <div className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-6">
+            Building Status
+          </div>
+
+          <div className="grid grid-cols-1 items-stretch md:grid-cols-2 gap-6 sm:gap-8">
+            {[
+              {
+                name: "Emporium Park 1 (EMP1)",
+                status: "Operational",
+                area: "364,129 sqft",
+                floors: "7 Floors",
+                highlight: true,
+              },
+              {
+                name: "Emporium Park 2 (EMP2)",
+                status: "Completion June 2027",
+                area: "293,473 sqft",
+                floors: "7 Floors",
+                highlight: false,
+              },
+            ].map((building) => (
+              <Card
+                key={building.name}
+                size="sm"
+                tone={building.highlight ? "dark" : "glass"}
+                hover
+                className={`flex items-center justify-between gap-4 ${
+                  building.highlight ? "!border-accent/30" : ""
                 }`}
               >
-                {building.status}
-              </span>
-            </div>
-          ))}
+                <div>
+                  <div className="text-xs text-white/50 mb-1 font-medium tracking-wider uppercase">
+                    {building.floors}
+                  </div>
+                  <div className="text-base sm:text-lg font-semibold text-white">{building.name}</div>
+                  <div className="text-sm text-white/60 mt-0.5">{building.area}</div>
+                </div>
+                <span
+                  className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase whitespace-nowrap border shrink-0 ${
+                    building.highlight
+                      ? "text-accent border-accent/60 bg-accent/10"
+                      : "text-white/50 border-white/30"
+                  }`}
+                >
+                  {building.status}
+                </span>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>

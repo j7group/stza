@@ -1,4 +1,5 @@
 import SectionLabel from "@/components/ui/SectionLabel";
+import Card from "@/components/ui/Card";
 import { eligibilitySteps } from "@/lib/tech7";
 import Link from "next/link";
 
@@ -18,12 +19,9 @@ export default function Eligibility() {
         </div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+        <div className="grid grid-cols-1 items-stretch md:grid-cols-3 gap-6 sm:gap-7 mb-10 sm:mb-12">
           {eligibilitySteps.map((step, idx) => (
-            <div
-              key={idx}
-              className="bg-white border border-border rounded-2xl flex flex-col justify-between px-6 py-6 transition-all duration-200 hover:border-accent hover:-translate-y-1 hover:shadow-md shadow-xs"
-            >
+            <Card key={idx} size="sm" hover className="flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-5">
                   <span className="font-serif text-2xl sm:text-3xl font-normal text-primary leading-none">
@@ -43,12 +41,12 @@ export default function Eligibility() {
               <div className="mt-6 pt-3.5 border-t border-dashed border-border text-[11px] text-muted uppercase tracking-wider">
                 STZA Act 2021 § Verification
               </div>
-            </div>
+            </Card>
           ))}
         </div>
 
         {/* Assistance Banner */}
-        <div className="px-6 py-6 sm:px-8 sm:py-7 rounded-2xl bg-primary text-white flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5 shadow-sm">
+        <Card tone="dark" className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
           <div className="max-w-2xl">
             <h4 className="font-serif text-lg sm:text-xl font-normal text-white mb-1">
               Need assistance with STZA Zone Enterprise licensing?
@@ -67,7 +65,7 @@ export default function Eligibility() {
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </Link>
-        </div>
+        </Card>
       </div>
     </section>
   );

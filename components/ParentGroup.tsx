@@ -1,4 +1,5 @@
 import SectionLabel from "@/components/ui/SectionLabel";
+import Card from "@/components/ui/Card";
 import { j7Data } from "@/lib/tech7";
 
 export default function ParentGroup() {
@@ -37,9 +38,9 @@ export default function ParentGroup() {
           </div>
 
           {/* Right: Portfolio & Sectors */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-6 sm:gap-8">
             {/* Signature Developments */}
-            <div className="bg-white/[0.04] rounded-2xl px-6 py-6 sm:px-7 sm:py-6 border border-white/10 backdrop-blur-sm">
+            <Card size="sm" tone="glass">
               <h3 className="text-xs uppercase tracking-widest text-accent font-semibold mb-4">
                 Signature Developments
               </h3>
@@ -54,10 +55,10 @@ export default function ParentGroup() {
                   </div>
                 ))}
               </div>
-            </div>
+            </Card>
 
             {/* Core Sectors */}
-            <div className="bg-white/[0.04] rounded-2xl px-6 py-6 sm:px-7 sm:py-6 border border-white/10 backdrop-blur-sm">
+            <Card size="sm" tone="glass">
               <h3 className="text-xs uppercase tracking-widest text-accent font-semibold mb-4">
                 Institutional Expertise Across Sectors
               </h3>
@@ -71,7 +72,7 @@ export default function ParentGroup() {
                   </span>
                 ))}
               </div>
-            </div>
+            </Card>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import SectionLabel from "@/components/ui/SectionLabel";
+import Card from "@/components/ui/Card";
 import { tenants } from "@/lib/tech7";
 
 const statusConfig = {
@@ -42,14 +43,11 @@ export default function Tenants() {
         </div>
 
         {/* Tenant Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 items-stretch md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
           {tenants.map((tenant, idx) => {
             const status = statusConfig[tenant.status];
             return (
-              <div
-                key={idx}
-                className="bg-white border border-border rounded-2xl flex flex-col justify-between px-8 py-10 sm:py-12 transition-all duration-200 hover:border-accent hover:-translate-y-1 hover:shadow-lg shadow-xs"
-              >
+              <Card key={idx} hover className="flex flex-col justify-between">
                 {/* Top */}
                 <div>
                   <div className="flex items-center justify-between mb-6">
@@ -84,7 +82,7 @@ export default function Tenants() {
                     </svg>
                   </div>
                 </div>
-              </div>
+              </Card>
             );
           })}
         </div>

@@ -2,6 +2,16 @@ import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { galleryImages } from "@/lib/tech7";
 
+/** Matches the actual rendered column width of each item at every
+ *  breakpoint (grid goes 2 → 3 → 4 cols; "wide" items span 2 cols),
+ *  so Next/Image requests the right resolution instead of over- or
+ *  under-fetching. */
+function imageSizes(span: "wide" | "tall" | "normal") {
+  return span === "wide"
+    ? "(max-width: 767px) 100vw, (max-width: 1023px) 66vw, 50vw"
+    : "(max-width: 767px) 50vw, (max-width: 1023px) 33vw, 25vw";
+}
+
 export default function SpacesGallery() {
   return (
     <section id="spaces" className="section bg-white py-24 lg:py-32">
@@ -19,13 +29,17 @@ export default function SpacesGallery() {
           </p>
         </div>
 
-        {/* Masonry Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[220px]">
+        {/* Masonry Grid — 2 cols on phones, 3 on tablets, 4 from desktop up.
+            Row height grows with the viewport so images get visibly larger
+            on big screens instead of staying pinned to a fixed 220px.
+            grid-flow-dense backfills any holes left by the wide/tall spans
+            when the column count changes between breakpoints. */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid-flow-dense gap-4 md:gap-5 lg:gap-6 auto-rows-[160px] sm:auto-rows-[190px] md:auto-rows-[220px] lg:auto-rows-[260px] xl:auto-rows-[300px] 2xl:auto-rows-[340px]">
           {galleryImages.map((img, i) => (
             <div
               key={i}
               id={`gallery-img-${i}`}
-              className={`group relative overflow-hidden bg-surface rounded-2xl border border-border/60 ${
+              className={`group relative overflow-hidden bg-surface border border-border/60 ${
                 img.span === "wide" ? "col-span-2" : "col-span-1"
               } ${img.span === "tall" ? "row-span-2" : "row-span-1"}`}
             >
@@ -34,12 +48,12 @@ export default function SpacesGallery() {
                 alt={img.alt}
                 fill
                 className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                sizes={imageSizes(img.span)}
               />
 
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-colors duration-300 flex items-end p-4">
-                <span className="text-xs text-white font-medium opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-primary/80 px-3 py-1.5 rounded-lg backdrop-blur-sm shadow-sm">
+              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300 flex items-end p-4">
+                <span className="text-xs text-white font-medium opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-primary/80 px-3 py-1.5 backdrop-blur-sm shadow-sm">
                   {img.alt}
                 </span>
               </div>

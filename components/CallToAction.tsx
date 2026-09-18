@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import SectionLabel from "@/components/ui/SectionLabel";
+import Card from "@/components/ui/Card";
 import { ctaData, footerData } from "@/lib/tech7";
 
 export default function CallToAction() {
@@ -20,7 +21,7 @@ export default function CallToAction() {
   return (
     <section id="contact" className="section bg-surface py-20 lg:py-24">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+        <div className="grid grid-cols-1 items-stretch lg:grid-cols-2 gap-10 lg:gap-14">
           {/* Left: Direct Info & PDF */}
           <div>
             <SectionLabel>{ctaData.label}</SectionLabel>
@@ -35,7 +36,7 @@ export default function CallToAction() {
             </p>
 
             {/* Direct Contact Info Card */}
-            <div className="px-6 py-6 rounded-2xl bg-white border border-border mb-6 shadow-xs">
+            <Card size="sm" className="mb-6">
               <h4 className="text-[11px] uppercase tracking-wider text-muted font-semibold mb-4">
                 Zone Secretariat &amp; Inquiries
               </h4>
@@ -61,7 +62,7 @@ export default function CallToAction() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Card>
 
             {/* PDF Download */}
             <a
@@ -78,7 +79,7 @@ export default function CallToAction() {
           </div>
 
           {/* Right: Form */}
-          <div className="px-6 py-6 sm:px-8 sm:py-7 bg-white rounded-2xl border border-border shadow-sm">
+          <Card>
             {submitted ? (
               <div className="py-8 px-4 text-center">
                 <div className="w-12 h-12 rounded-full bg-accent/40 text-primary flex items-center justify-center text-xl mx-auto mb-4">
@@ -182,7 +183,7 @@ export default function CallToAction() {
                 </button>
               </form>
             )}
-          </div>
+          </Card>
         </div>
       </div>
     </section>

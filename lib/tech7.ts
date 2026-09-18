@@ -232,13 +232,13 @@ export const techCategories: TechCategory[] = [
 export const galleryImages: GalleryImage[] = [
   {
     src: "/images/imgi_22_9-1.jpg.webp",
-    alt: "Tech7 building exterior — aerial view",
-    span: "wide",
+    alt: "J7 building exterior — aerial view",
+    span: "tall",
   },
   {
     src: "/images/imgi_34_7-2.jpg",
     alt: "Tech7 premium office lounge",
-    span: "tall",
+    span: "wide",
   },
   {
     src: "/images/imgi_36_34.jpg",
@@ -276,29 +276,19 @@ export const galleryImages: GalleryImage[] = [
     span: "normal",
   },
   {
-    src: "/images/imgi_31_12-1.jpg",
-    alt: "Tech7 collaborative area",
-    span: "normal",
-  },
-  {
-    src: "/images/imgi_32_11-1.jpg",
-    alt: "Tech7 open office",
-    span: "tall",
-  },
-  {
     src: "/images/imgi_33_9-1.jpg",
-    alt: "Tech7 building — Islamabad",
-    span: "normal",
-  },
-  {
-    src: "/images/imgi_27_1-2.jpg",
-    alt: "Tech7 premium suite",
+    alt: "J7 building — Islamabad",
     span: "normal",
   },
   {
     src: "/images/imgi_95_Tech7-STZ-1.png",
     alt: "Tech7 STZ branding",
     span: "normal",
+  },
+  {
+    src: "/images/imgi_31_12-1.jpg",
+    alt: "Tech7 collaborative area",
+    span: "wide",
   },
 ];
 

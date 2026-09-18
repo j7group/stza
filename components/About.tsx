@@ -4,13 +4,13 @@ import { aboutData } from "@/lib/tech7";
 
 export default function About() {
   return (
-    <section id="about" className="section bg-surface py-24 lg:py-32">
+    <section id="about" className="section bg- py-24 lg:py-32">
       <div className="container grid gap-12 lg:gap-16 items-center lg:grid-cols-[55fr_45fr]">
         {/* Left — Text */}
         <div>
           <SectionLabel>{aboutData.label}</SectionLabel>
 
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-primary leading-tight mb-8 font-normal">
+          <h2 className="font-serif text-3xl sm:text-4xl text-primary leading-tight mb-8 font-normal">
             {aboutData.headline}
           </h2>
 
@@ -41,7 +41,7 @@ export default function About() {
         </div>
 
         {/* Right — Image */}
-        <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-border shadow-sm">
+        <div className="relative overflow-hidden aspect-[17/16] border border-border shadow-sm">
           <Image
             src={aboutData.image}
             alt={aboutData.imageAlt}
